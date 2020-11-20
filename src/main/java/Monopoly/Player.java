@@ -4,6 +4,8 @@ public class Player {
     private String name;
     private Bank bank;
     private Piece piece;
+    private boolean paidBail = false;
+    private boolean exCon = false;
 
     public Player(String name, int balance, int location) {
         this.name = name;
@@ -11,6 +13,10 @@ public class Player {
         this.piece = new Piece(location);
     }
 
+    public void pay(Player recipient, int amount){
+    bank.withdraw(amount);
+    recipient.getBank().deposit(amount);
+    }
     public void movePiece(int sum) {
         piece.setLocation(sum);
     }
