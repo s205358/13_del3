@@ -4,6 +4,9 @@ public class Player {
     private String name;
     private Bank bank;
     private Piece piece;
+
+    private Board board = Board.getInstance();
+
     private boolean paidBail = false;
     private boolean exCon = false;
 
@@ -14,18 +17,40 @@ public class Player {
     }
 
     public void pay(Player recipient, int amount){
-    bank.withdraw(amount);
-    recipient.getBank().deposit(amount);
+        bank.withdraw(amount);
+        recipient.getBank().deposit(amount);
     }
-    public void movePiece(int sum) {
-        piece.setLocation(sum);
+
+
+    public void movePiece(int location) {
+        int size  = board.getSize();
+        if (location - 1 > size) {
+            piece.setLocation(location - size);
+        } else {
+            piece.setLocation(location);
+        }
     }
 
     public void updateBalance(int cash) {
         bank.updateBalance(cash);
     }
 
-    // Getters/Setters
+    public boolean isExCon() {
+        return exCon;
+    }
+
+    public void setExCon(boolean exCon) {
+        this.exCon = exCon;
+    }
+
+    public boolean isPaidBail() {
+        return paidBail;
+    }
+
+    public void setPaidBail(boolean paidBail) {
+        this.paidBail = paidBail;
+    }
+
     public String getName() {
         return name;
     }
@@ -50,7 +75,6 @@ public class Player {
         this.piece = piece;
     }
 
-    // Stringify
     @Override
     public String toString() {
         return name + " " + bank.toString();
