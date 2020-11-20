@@ -10,19 +10,30 @@ public class Property extends Square {
         super(name);
         this.value = value;
     }
-        public Player getOwner() {
-            return owner;
-        }
 
-        public void setOwner(Player owner) {
-            this.owner = owner;
-        }
-
-        public int getValue() {
-            return value;
-        }
-
-        public void setValue(int value) {
-            this.value = value;
-        }
+    public void buy(Player buyer) {
+        buyer.updateBalance(-1 * value);
+        setOwner(buyer);
     }
+
+    public void sell() {
+        owner.updateBalance(value);
+        setOwner(null);
+    }
+
+    public Player getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Player owner) {
+        this.owner = owner;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+}
