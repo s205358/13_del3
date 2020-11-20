@@ -36,7 +36,6 @@ public class Game {
 
                 Square location = board.getSquare(newLocation);
                 if (location instanceof Property) {
-                    // System.out.println("Is property");
                     Property p = (Property) location;
                     if (p.getOwner() == null) {
                         p.buy(player);
@@ -48,19 +47,8 @@ public class Game {
                     }
                     // Check balance and do something if cannot pay
                 } else if (location instanceof Chance) {
-                    // System.out.println("Is chance");
 
-                } /*else if (location instanceof Go) {
-                    System.out.println("Is go");
-                    // do nothing
-                } else if (location instanceof Prison) {
-                    System.out.println("Is prison");
-                    // do nothing
-                } else if (location instanceof Parking) {
-                    System.out.println("Is parking");
-                    // do nothing
-                }*/ else if (location instanceof Court) {
-                    // System.out.println("Is court");
+                } else if (location instanceof Court) {
                     player.getPiece().setLocation(6);
                     player.setExCon(true);
                 } else {
@@ -86,6 +74,7 @@ public class Game {
 
                 if (player.getBank().getBalance() == 0) {
                     winner = !winner;
+                    break;
                 }
             }
         } while(!winner);

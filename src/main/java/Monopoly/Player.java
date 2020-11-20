@@ -4,9 +4,6 @@ public class Player {
     private String name;
     private Bank bank;
     private Piece piece;
-
-    private Board board = Board.getInstance();
-
     private boolean paidBail = false;
     private boolean exCon = false;
 
@@ -21,14 +18,8 @@ public class Player {
         recipient.getBank().deposit(amount);
     }
 
-
     public void movePiece(int location) {
-        int size  = board.getSize();
-        if (location - 1 > size) {
-            piece.setLocation(location - size);
-        } else {
-            piece.setLocation(location);
-        }
+        piece.setLocation(location);
     }
 
     public void updateBalance(int cash) {
@@ -80,6 +71,3 @@ public class Player {
         return name + " " + bank.toString();
     }
 }
-
-
-

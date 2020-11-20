@@ -30,7 +30,6 @@ public class Bank {
         }
     }
 
-    // Getters/Setters
     public int getBalance() {
         return balance;
     }
@@ -39,7 +38,6 @@ public class Bank {
         this.balance = balance;
     }
 
-    // Stringify
     @Override
     public String toString() {
         return "$" + balance;

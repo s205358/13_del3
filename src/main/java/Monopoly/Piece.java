@@ -7,7 +7,6 @@ public class Piece {
         this.location = location;
     }
 
-    // Getters/Setters
     public int getLocation() {
         return location;
     }
@@ -16,7 +15,6 @@ public class Piece {
         this.location = location;
     }
 
-    // Stringify
     @Override
     public String toString() {
         return "located at " + location;
