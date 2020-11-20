@@ -14,12 +14,4 @@ public abstract class Card {
     public void setInstrcutions(String instrcutions) {
         this.instrcutions = instrcutions;
     }
-
-    public String getInstructions() {
-        return instructions;
-    }
-
-    public void setInstructions(String instructions) {
-        this.instructions = instructions;
-    }
 }
