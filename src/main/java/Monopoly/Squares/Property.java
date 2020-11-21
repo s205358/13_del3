@@ -2,13 +2,17 @@ package Monopoly.Squares;
 
 import Monopoly.Player;
 
+import java.awt.*;
+
 public class Property extends Square {
     private int value;
     private Player owner = null;
+    private Color color;
 
-    public Property(String name, int value) {
+    public Property(String name, int value, Color color) {
         super(name);
         this.value = value;
+        this.color = color;
     }
 
     public void buy(Player buyer) {
@@ -37,5 +41,13 @@ public class Property extends Square {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 }
