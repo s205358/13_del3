@@ -13,11 +13,13 @@ public class Property extends Square {
 
     public void buy(Player buyer) {
         buyer.updateBalance(-1 * value);
+        buyer.addProperty(this);
         setOwner(buyer);
     }
 
     public void sell() {
         owner.updateBalance(value);
+        owner.removeProperty(this);
         setOwner(null);
     }
 
