@@ -20,6 +20,7 @@ public class Player {
     }
 
     public boolean forcedSale(int debt) {
+        debt = Math.abs(debt);
         if (this.bank.getBalance() < debt && hasProperties()) {
             return true;
         } else {
