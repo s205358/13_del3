@@ -7,7 +7,8 @@ public class Jail extends Card {
         super(instructions);
     }
 
-    public void getOut(Player player) {
+    @Override
+    public void update(Player player) {
         player.setPaidBail(true);
     }
 }
