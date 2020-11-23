@@ -14,7 +14,7 @@ public class Board {
             red = new Color(220,20,60),
             yellow = new Color(255,215,0),
             green = new Color(50,205,50),
-            darkblue = new Color(0,0,205);
+            darkblue = new Color(78, 78, 255);
 
     private Square[] squares = {
             new Go(),
