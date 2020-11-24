@@ -12,6 +12,8 @@ class BankTest {
     void deposit() {
         bank.deposit(10);
         assertEquals(100, bank.getBalance());
+        bank.deposit(-10);
+        assertEquals(100, bank.getBalance());
     }
 
     @Test
