@@ -22,6 +22,8 @@ class PieceTest {
 
     @Test
     void setLocation() {
+        piece.setLocation(15);
+        assertEquals(15, piece.getLocation());
     }
 
     @Test
