@@ -1,6 +1,10 @@
 package Monopoly;
 
+import Monopoly.Squares.Property;
 import org.junit.jupiter.api.Test;
+
+import java.awt.*;
+import java.net.BindException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,6 +14,13 @@ class PlayerTest {
     @Test
     void forcedSale() {
 
+        assertEquals(false, player.forcedSale(5));
+
+        assertEquals(false, player.forcedSale(20));
+
+        player.addProperty(new Property("TestProperty", 2, Color.blue));
+
+        assertEquals(true, player.forcedSale(20));
     }
 
     @Test
@@ -18,14 +29,17 @@ class PlayerTest {
 
     @Test
     void numOfProperties() {
+
     }
 
     @Test
     void hasProperties() {
+
     }
 
     @Test
     void addProperty() {
+
     }
 
     @Test
