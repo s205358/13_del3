@@ -18,6 +18,10 @@ class BankTest {
 
     @Test
     void withdraw() {
+        bank.withdraw(10);
+        assertEquals(80, bank.getBalance());
+        bank.withdraw(-10);
+        assertEquals(80, bank.getBalance());
     }
 
     @Test
