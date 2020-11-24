@@ -7,7 +7,15 @@ public class Piece {
         this.location = location;
     }
 
-    // Getters/Setters
+    public void move(int steps) {
+        int destination = location + steps;
+        int size = Board.getInstance().getSize();
+        if (destination + 1 >  size) {
+            destination -= size;
+        }
+        setLocation(destination);
+    }
+
     public int getLocation() {
         return location;
     }
@@ -16,7 +24,6 @@ public class Piece {
         this.location = location;
     }
 
-    // Stringify
     @Override
     public String toString() {
         return "located at " + location;
