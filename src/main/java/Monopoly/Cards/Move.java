@@ -13,12 +13,6 @@ public class Move extends Card {
 
     @Override
     public void update(Player player) {
-        int oldLocation = player.getPiece().getLocation();
-        int newLocation = oldLocation + steps;
-        int size = Board.getInstance().getSize();
-        if (newLocation + 1 >  size) {
-            newLocation -= size;
-        }
-        player.movePiece(newLocation);
+        player.getPiece().move(steps);
     }
 }

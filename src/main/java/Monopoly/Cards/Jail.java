@@ -9,6 +9,6 @@ public class Jail extends Card {
 
     @Override
     public void update(Player player) {
-        player.setPaidBail(true);
+        player.setBail(true);
     }
 }

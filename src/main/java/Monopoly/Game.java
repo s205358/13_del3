@@ -20,7 +20,6 @@ public class Game {
     private Die die = new Die(6);
     private Board board = Board.getInstance();
     private Deck deck = new Deck();
-    private Bank bank = new Bank(90);
 
     public Game() {
     }
@@ -88,15 +87,12 @@ public class Game {
         switch(num) {
             case 2:
                 balance = 20;
-                bank.withdraw(2*20);
                 break;
             case 3:
                 balance = 18;
-                bank.withdraw(2*18);
                 break;
             case 4:
                 balance = 16;
-                bank.withdraw(2*16);
                 break;
             default:
                 balance = 0;

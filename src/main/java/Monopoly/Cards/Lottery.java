@@ -15,4 +15,3 @@ public class Lottery extends Card {
         player.getBank().deposit(amount);
     }
 }
-

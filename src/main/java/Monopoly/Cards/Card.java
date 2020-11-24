@@ -3,19 +3,19 @@ package Monopoly.Cards;
 import Monopoly.Player;
 
 public abstract class Card {
-    private String instructions;
+    private String instrcutions;
 
     public Card(String instructions) {
-        this.instructions = instructions;
+        this.instrcutions = instructions;
     }
 
     public abstract void update(Player player);
 
-    public String getInstructions() {
-        return instructions;
+    public String getInstrcutions() {
+        return instrcutions;
     }
 
-    public void setInstructions(String instructions) {
-        this.instructions = instructions;
+    public void setInstrcutions(String instrcutions) {
+        this.instrcutions = instrcutions;
     }
 }

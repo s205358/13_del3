@@ -12,6 +12,6 @@ public class Goto extends Card {
 
     @Override
     public void update(Player player) {
-        player.movePiece(location);
+        player.getPiece().setLocation(location);
     }
 }

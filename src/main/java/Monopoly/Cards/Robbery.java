@@ -12,5 +12,6 @@ public class Robbery extends Card {
 
     @Override
     public void update(Player player) {
-        player.getBank().withdraw(amount); }
+        player.getBank().withdraw(amount); // ForcedSale?
+    }
 }
