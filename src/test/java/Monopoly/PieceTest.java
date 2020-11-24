@@ -14,6 +14,8 @@ class PieceTest {
     void move() {
         piece.move(10);
         assertEquals(20,piece.getLocation());
+        piece.move(-10);
+        assertEquals(20,piece.getLocation()); //bug?
     }
 
     @Test
@@ -22,6 +24,8 @@ class PieceTest {
 
     @Test
     void setLocation() {
+        piece.setLocation(15);
+        assertEquals(15, piece.getLocation());
     }
 
     @Test
