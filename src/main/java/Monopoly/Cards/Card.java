@@ -1,19 +1,15 @@
 package Monopoly.Cards;
 
+import Monopoly.Player;
+
 public abstract class Card {
-    private String instrcutions;
+    private String instructions;
 
     public Card(String instructions) {
-        this.instrcutions = instructions;
+        this.instructions = instructions;
     }
 
-    public String getInstrcutions() {
-        return instrcutions;
-    }
-
-    public void setInstrcutions(String instrcutions) {
-        this.instrcutions = instrcutions;
-    }
+    public abstract void update(Player player);
 
     public String getInstructions() {
         return instructions;
