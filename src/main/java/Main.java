@@ -15,7 +15,7 @@ public class Main {
                 red = new Color(220,20,60),
                 yellow = new Color(255,215,0),
                 green = new Color(50,205,50),
-                darkblue = new Color(0,0,205);
+                darkblue = new Color(134, 134, 255);
 
         GUI_Field[] fields = new GUI_Field[]{
                 new GUI_Street("Start", "Modtag: 2", "", "2", WHITE, BLACK), // Start

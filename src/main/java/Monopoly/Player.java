@@ -10,14 +10,27 @@ public class Player {
     private Piece piece;
     private ArrayList<Property> properties = new ArrayList<Property>();
 
-    private boolean paidBail = false;
-    private boolean exCon = false;
+    private boolean bail = false;
+    private boolean convicted = false;
 
     public Player(String name, int balance, int location) {
         this.name = name;
         this.bank = new Bank(balance);
         this.piece = new Piece(location);
     }
+
+    /*public void convicted() {
+        int amount = 0;
+        if (convicted) {
+            amount = -1;
+            if (bail) {
+                amount = 0;
+                bail = false;
+            }
+            convicted = false;
+        }
+        forcedSale(amount);
+    }*/
 
     public boolean forcedSale(int debt) {
         debt = Math.abs(debt);
@@ -87,20 +100,20 @@ public class Player {
         bank.updateBalance(cash);
     }
 
-    public boolean isExCon() {
-        return exCon;
+    public boolean isConvicted() {
+        return convicted;
     }
 
-    public void setExCon(boolean exCon) {
-        this.exCon = exCon;
+    public void setConvicted(boolean convicted) {
+        this.convicted = convicted;
     }
 
-    public boolean isPaidBail() {
-        return paidBail;
+    public boolean hasBail() {
+        return bail;
     }
 
-    public void setPaidBail(boolean paidBail) {
-        this.paidBail = paidBail;
+    public void setBail(boolean bail) {
+        this.bail = bail;
     }
 
     public String getName() {
