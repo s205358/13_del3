@@ -26,6 +26,10 @@ class BankTest {
 
     @Test
     void updateBalance() {
+        bank.updateBalance(10);
+        assertEquals(100, bank.getBalance());
+        bank.updateBalance(-10);
+        assertEquals(90, bank.getBalance());
     }
 
     @Test
