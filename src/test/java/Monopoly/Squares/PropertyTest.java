@@ -51,10 +51,16 @@ class PropertyTest {
     void sell() {
         propertyA.setOwner(playerA);
 
+
         //Bug.
-        propertyA.sell();
+       // propertyA.sell();
+       // assertEquals(false, playerA.hasProperties());
+       // assertEquals(15, playerA.getBank().getBalance());
+
+        // fejl. NullException. Sker hvis en ejendom uden ejer prøves at sælges.
+        propertyB.sell();
         assertEquals(false, playerA.hasProperties());
-        assertEquals(15, playerA.getBank().getBalance());
+        assertEquals(false, playerB.hasProperties());
     }
 
     @Test
@@ -63,6 +69,8 @@ class PropertyTest {
 
     @Test
     void setOwner() {
+        propertyB.setOwner(playerA);
+        assertEquals(playerA, propertyB.getOwner());
     }
 
     @Test
