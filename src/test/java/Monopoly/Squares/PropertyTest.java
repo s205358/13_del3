@@ -22,17 +22,20 @@ class PropertyTest {
     void buy() {
         playerB.addProperty(propertyB);
 
-
         propertyA.buy(playerA);
         assertEquals(true, playerA.hasProperties());
         assertEquals(playerA, propertyA.getOwner());
         assertEquals(propertyA, playerA.getProperty(0));
         assertEquals(5, playerA.getBank().getBalance());
 
+        // Bug. Der sker ejerskift, men playerB får ikke penge for
+        // den ejendom, som playerA har købt fra ham.
         propertyB.buy(playerA);
         assertEquals(true, playerA.hasProperties());
         assertEquals(playerA, propertyA.getOwner());
         assertEquals(propertyA, playerA.getProperty(0));
+        assertEquals(2, playerA.getBank().getBalance());
+        assertEquals(6, playerB.getBank().getBalance());
 
 
     }
