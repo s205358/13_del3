@@ -69,11 +69,11 @@ public class Game {
             Square square = board.getSquare(i);
             if (square instanceof Property) {
                 Property property = (Property) square;
-                fields[i] = new GUI_Street(property.getName(), "$" + property.getValue(), "", "", property.getColor(), BLACK);
+                fields[i] = new GUI_Street(property.getName(), "$" + property.getValue(), property.getName(), "$" + property.getValue(), property.getColor(), BLACK);
             } else if (square instanceof Chance) {
                 fields[i] = new GUI_Chance();
             } else {
-                fields[i] = new GUI_Street(square.getName(), "", "", "", WHITE, BLACK);
+                fields[i] = new GUI_Street(square.getName(), "", square.getName(), "Ingen", WHITE, BLACK);
             }
         }
 
