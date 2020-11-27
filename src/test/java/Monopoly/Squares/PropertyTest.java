@@ -53,9 +53,9 @@ class PropertyTest {
 
 
         //Bug.
-       // propertyA.sell();
-       // assertEquals(false, playerA.hasProperties());
-       // assertEquals(15, playerA.getBank().getBalance());
+        propertyA.sell();
+       assertEquals(false, playerA.hasProperties());
+       assertEquals(15, playerA.getBank().getBalance());
 
         // fejl. NullException. Sker hvis en ejendom uden ejer prøves at sælges.
         propertyB.sell();
