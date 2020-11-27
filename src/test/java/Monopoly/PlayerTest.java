@@ -9,18 +9,19 @@ import java.net.BindException;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
-    Player player = new Player("Test", 10, 10);
-    Player player2 = new Player("Test2", 20, 20);
+    Player playerA = new Player("A", 5, 10);
+    Player playerB = new Player("B", 3, 20);
+
     @Test
     void forcedSale() {
 
-        assertEquals(false, player.forcedSale(5));
+        assertEquals(false, playerA.forcedSale(5));
 
-        assertEquals(false, player.forcedSale(20));
+        assertEquals(false, playerA.forcedSale(20));
 
-        player.addProperty(new Property("TestProperty", 2, Color.blue));
+        playerA.addProperty(new Property("TestProperty", 2, Color.blue));
 
-        assertEquals(true, player.forcedSale(20));
+        assertEquals(true, playerA.forcedSale(20));
     }
 
     @Test
@@ -39,7 +40,6 @@ class PlayerTest {
 
     @Test
     void addProperty() {
-
     }
 
     @Test
@@ -64,15 +64,20 @@ class PlayerTest {
 
     @Test
     void pay() {
-        player.pay(player2, 10);
-        assertEquals(0, player.getBank().getBalance());
 
-        player2.pay(player, 10);
-        assertEquals(10, player.getBank().getBalance());
+        playerA.pay(playerB,2);
+        assertEquals(3, playerA.getBank().getBalance());
+        assertEquals(5, playerB.getBank().getBalance());
 
-        player.pay(player, 10);
-        assertEquals(10, player.getBank().getBalance());
 
+        // Bug. playerB får 10 i sin bankkonto og ikke 8.
+        playerA.pay(playerB,5);
+        assertEquals(0, playerA.getBank().getBalance());
+        assertEquals(8, playerB.getBank().getBalance());
+
+        //Test for at se om man kan betale sig selv.
+        playerB.pay(playerB, 2);
+        assertEquals(10, playerB.getBank().getBalance());
     }
 
     @Test
