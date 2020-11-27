@@ -19,19 +19,6 @@ public class Player {
         this.piece = new Piece(location);
     }
 
-    /*public void convicted() {
-        int amount = 0;
-        if (convicted) {
-            amount = -1;
-            if (bail) {
-                amount = 0;
-                bail = false;
-            }
-            convicted = false;
-        }
-        forcedSale(amount);
-    }*/
-
     public boolean forcedSale(int debt) {
         debt = Math.abs(debt);
         if (this.bank.getBalance() < debt && hasProperties()) {

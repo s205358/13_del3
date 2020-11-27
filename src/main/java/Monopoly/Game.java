@@ -115,7 +115,6 @@ public class Game {
         deck.setCards(cards);
     }
 
-    // Refactor later
     public void play() {
         Scanner sc = new Scanner(System.in);
 
