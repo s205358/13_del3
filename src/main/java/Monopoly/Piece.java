@@ -12,6 +12,8 @@ public class Piece {
         int size = Board.getInstance().getSize();
         if (destination + 1 >  size) {
             destination -= size;
+        } else if (destination < 0) {
+            destination += size;
         }
         setLocation(destination);
     }
@@ -26,6 +28,8 @@ public class Piece {
 
     @Override
     public String toString() {
-        return "located at " + location;
+        return "Piece{" +
+                "location=" + location +
+                '}';
     }
 }

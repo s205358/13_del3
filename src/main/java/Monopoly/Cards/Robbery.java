@@ -14,4 +14,11 @@ public class Robbery extends Card {
     public void update(Player player) {
         player.getBank().withdraw(amount); // ForcedSale?
     }
+
+    @Override
+    public String toString() {
+        return "Robbery{" +
+                "amount=" + amount +
+                '}';
+    }
 }

@@ -23,6 +23,9 @@ public class Die {
 
     @Override
     public String toString() {
-        return faceValue + " eye(s)";
+        return "Die{" +
+                "MAX=" + MAX +
+                ", faceValue=" + faceValue +
+                '}';
     }
 }

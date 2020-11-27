@@ -105,12 +105,12 @@ public class Game {
 
         // Init cards
         Card[] cards = {
-                new Birthday("Blahblah", players, 2), // check if this updates the acutal players balance...
-                new Jail("Blahblah"),
-                new Lottery("Blahblah", 2),
-                new Robbery("Blahblah", 2),
-                new Move("Blahblah", 5),
-                new Goto("Blahblah",23),
+                new Birthday("Det er din fødselsdag! Alle giver dig $1. Tillykke med fødselsdagen!", players, 1), // check if this updates the acutal players balance...
+                new Jail("Du løslades uden omkostninger. Behold dette kort indtil du får brug for det."),
+                new Lottery("Du har lavet alle dine lektier. Modtag $2 fra banken.", 2),
+                new Robbery("Du har spist for meget slik. Betal $2 til banken.", 2),
+                new Move("Ryk op til 5 felter frem.", 5),
+                new Goto("Ryk frem til Strandpromenaden.",23),
         };
         deck.setCards(cards);
     }
@@ -172,6 +172,8 @@ public class Game {
                 if (location instanceof Chance) {
                     // Landed on chance?
                     Card card = deck.getRandom();
+                    gui.showMessage(players[i].getName() + " er landet på et chancefelt");
+                    gui.displayChanceCard(card.getInstrcutions());
                     card.update(players[i]);
                     gui.getFields()[newLocation].setCar(gui_players[i], false);
                     gui.getFields()[players[i].getPiece().getLocation()].setCar(gui_players[i], true);
@@ -197,7 +199,7 @@ public class Game {
                         // Forced Sale: Sell property to pay rent
                         forcedSale(players[i], property.getValue());
                         players[i].pay(property.getOwner(), property.getValue());
-                        gui_property.setOwnerName(null);
+                        // Doesn't update owners balance before his/hers turn...
                     } else {
                         // Do nothing
                     }
@@ -230,7 +232,6 @@ public class Game {
         sc.close();
 
         // Determine Winner
-        // Bug: If you give up, you can win.
         Player winner = null;
         Player tie = null;
         for(Player player: players) {
@@ -277,6 +278,8 @@ public class Game {
                 }
             } while(!valid);
             player.getProperty(n).sell();
+            GUI_Street gui_property = (GUI_Street) gui.getFields()[n];
+            gui_property.setOwnerName(null);
         }
     }
 

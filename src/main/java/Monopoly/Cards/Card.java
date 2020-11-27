@@ -18,4 +18,11 @@ public abstract class Card {
     public void setInstrcutions(String instrcutions) {
         this.instrcutions = instrcutions;
     }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "instrcutions='" + instrcutions + '\'' +
+                '}';
+    }
 }

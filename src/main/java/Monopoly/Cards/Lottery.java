@@ -14,4 +14,11 @@ public class Lottery extends Card {
     public void update(Player player) {
         player.getBank().deposit(amount);
     }
+
+    @Override
+    public String toString() {
+        return "Lottery{" +
+                "amount=" + amount +
+                '}';
+    }
 }

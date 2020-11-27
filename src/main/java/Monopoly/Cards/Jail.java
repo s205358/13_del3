@@ -11,4 +11,9 @@ public class Jail extends Card {
     public void update(Player player) {
         player.setBail(true);
     }
+
+    @Override
+    public String toString() {
+        return "Jail{}";
+    }
 }
