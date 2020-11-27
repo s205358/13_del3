@@ -16,15 +16,24 @@ public class Property extends Square {
     }
 
     public void buy(Player buyer) {
-        buyer.updateBalance(-1 * value);
-        buyer.addProperty(this);
-        setOwner(buyer);
+        if (owner == null) {
+            buyer.updateBalance(-1 * value);
+            buyer.addProperty(this);
+            setOwner(buyer);
+        } else if (buyer != owner) {
+            sell();
+            buyer.updateBalance(-1 * value);
+            buyer.addProperty(this);
+            setOwner(buyer);
+        }
     }
 
     public void sell() {
-        owner.updateBalance(value);
-        owner.removeProperty(this);
-        setOwner(null);
+        if (owner != null) {
+            owner.updateBalance(value);
+            owner.removeProperty(this);
+            setOwner(null);
+        }
     }
 
     public Player getOwner() {
@@ -49,5 +58,14 @@ public class Property extends Square {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Property{" +
+                "value=" + value +
+                ", owner=" + owner +
+                ", color=" + color +
+                '}';
     }
 }

@@ -6,30 +6,39 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BankTest {
 
-    Bank bank = new Bank(90);
+    Bank bank = new Bank(20);
 
     @Test
     void deposit() {
+        assertEquals(20, bank.getBalance());
         bank.deposit(10);
-        assertEquals(100, bank.getBalance());
+        assertEquals(30, bank.getBalance());
+        bank.deposit(0);
+        assertEquals(30, bank.getBalance());
         bank.deposit(-10);
-        assertEquals(100, bank.getBalance());
+        assertEquals(40, bank.getBalance());
     }
 
     @Test
     void withdraw() {
-        bank.withdraw(10);
-        assertEquals(80, bank.getBalance());
-        bank.withdraw(-10);
-        assertEquals(80, bank.getBalance());
+        assertEquals(20, bank.getBalance());
+        bank.withdraw(5);
+        assertEquals(15, bank.getBalance());
+        bank.withdraw(0);
+        assertEquals(15, bank.getBalance());
+        bank.withdraw(-5);
+        assertEquals(10, bank.getBalance());
+        bank.withdraw(20);
+        assertEquals(0, bank.getBalance());
     }
 
     @Test
     void updateBalance() {
+        assertEquals(20, bank.getBalance());
         bank.updateBalance(10);
-        assertEquals(100, bank.getBalance());
+        assertEquals(30, bank.getBalance());
         bank.updateBalance(-10);
-        assertEquals(90, bank.getBalance());
+        assertEquals(20, bank.getBalance());
     }
 
     @Test

@@ -14,4 +14,11 @@ public class Goto extends Card {
     public void update(Player player) {
         player.getPiece().setLocation(location);
     }
+
+    @Override
+    public String toString() {
+        return "Goto{" +
+                "location=" + location +
+                '}';
+    }
 }

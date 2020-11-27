@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class RobberyTest {
 
     Player player = new Player("John Doe", 10,0);
-
     Robbery robbery = new Robbery("bla",5);
 
     @Test

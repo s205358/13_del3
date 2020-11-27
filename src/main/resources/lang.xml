@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<lang>
+    <danish>
+        <messages>
+            <number-of-players>Vælg antal spillere</number-of-players>
+            <choose-name>Angiv navn på spiller</choose-name>
+            <added-player>blev tilføjet til spillerlisten</added-player>
+            <choose-piece>Vælg en tilgængelig brik</choose-piece>
+            <not-a-number>Indtast venligst et heltal</not-a-number>
+            <out-of-range>Indtast venligst et heltal i intervallet</out-of-range>
+            <bankruptcy>En spiller er gået falit</bankruptcy>
+            <winner>En vinder er fundet! Tillykke</winner>
+        </messages>
+        <fields>
+            <field>
+                <title>Start</title>
+                <value>2</value>
+            </field>
+            <field>
+                <title>Burgerbar</title>
+                <value>1</value>
+            </field>
+            <field>
+                <title>Pizzeria</title>
+                <value>1</value>
+            </field>
+            <field>
+                <title>Chance</title>
+                <value>0</value>
+            </field>
+            <field>
+                <title>Slikbutik</title>
+                <value>1</value>
+            </field>
+            <field>
+                <title>Iskiosk</title>
+                <value>1</value>
+            </field>
+            <field>
+                <title>Fængsel</title>
+                <value>0</value>
+            </field>
+            <field>
+                <title>Museum</title>
+                <value>2</value>
+            </field>
+            <field>
+                <title>Bibliotek</title>
+                <value>2</value>
+            </field>
+            <field>
+                <title>Chance</title>
+                <value>0</value>
+            </field>
+            <field>
+                <title>Skatepark</title>
+                <value>2</value>
+            </field>
+            <field>
+                <title>Swimmingpool</title>
+                <value>2</value>
+            </field>
+            <field>
+                <title>P-plads</title>
+                <value>0</value>
+            </field>
+            <field>
+                <title>Spillehal</title>
+                <value>3</value>
+            </field>
+            <field>
+                <title>Biograf</title>
+                <value>3</value>
+            </field>
+            <field>
+                <title>Chance</title>
+                <value>0</value>
+            </field>
+            <field>
+                <title>Legetøjsbutik</title>
+                <value>3</value>
+            </field>
+            <field>
+                <title>Dyrehandel</title>
+                <value>3</value>
+            </field>
+            <field>
+                <title>Politistation</title>
+                <value>0</value>
+            </field>
+            <field>
+                <title>Bowlinghal</title>
+                <value>4</value>
+            </field>
+            <field>
+                <title>Zoo</title>
+                <value>4</value>
+            </field>
+            <field>
+                <title>Chance</title>
+                <value>0</value>
+            </field>
+            <field>
+                <title>Vandland</title>
+                <value>5</value>
+            </field>
+            <field>
+                <title>Strandpromenade</title>
+                <value>5</value>
+            </field>
+        </fields>
+        <cards>
+            <card>
+                <description>
+
+                </description>
+                <location>0</location>
+                <value>0</value>
+            </card>
+        </cards>
+        <pieces>
+            <piece>
+                <description>
+
+                </description>
+            </piece>
+        </pieces>
+    </danish>
+</lang>

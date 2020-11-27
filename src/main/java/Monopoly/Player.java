@@ -87,13 +87,12 @@ public class Player {
         this.properties = properties;
     }
 
-    public void pay(Player recipient, int amount){
+    public void pay(Player recipient, int amount) {
+        if (amount > bank.getBalance()) {
+            amount = bank.getBalance();
+        }
         bank.withdraw(amount);
         recipient.getBank().deposit(amount);
-    }
-
-    public void movePiece(int location) {
-        piece.setLocation(location);
     }
 
     public void updateBalance(int cash) {
@@ -142,6 +141,13 @@ public class Player {
 
     @Override
     public String toString() {
-        return name + " " + bank.toString();
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", bank=" + bank +
+                ", piece=" + piece +
+                ", properties=" + properties +
+                ", bail=" + bail +
+                ", convicted=" + convicted +
+                '}';
     }
 }

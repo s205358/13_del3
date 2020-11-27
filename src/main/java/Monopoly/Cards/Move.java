@@ -15,4 +15,11 @@ public class Move extends Card {
     public void update(Player player) {
         player.getPiece().move(steps);
     }
+
+    @Override
+    public String toString() {
+        return "Move{" +
+                "steps=" + steps +
+                '}';
+    }
 }

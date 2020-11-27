@@ -2,6 +2,8 @@ package Monopoly.Cards;
 
 import Monopoly.Player;
 
+import java.util.Arrays;
+
 public class Birthday extends Card {
     private Player[] attendees;
     private int amount;
@@ -17,5 +19,13 @@ public class Birthday extends Card {
         for (Player attendee: attendees) {
             attendee.pay(player, amount);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Birthday{" +
+                "attendees=" + Arrays.toString(attendees) +
+                ", amount=" + amount +
+                '}';
     }
 }

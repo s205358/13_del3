@@ -105,12 +105,12 @@ public class Game {
 
         // Init cards
         Card[] cards = {
-                new Birthday("Blahblah", players, 2), // check if this updates the acutal players balance...
-                new Jail("Blahblah"),
-                new Lottery("Blahblah", 2),
-                new Robbery("Blahblah", 2),
-                new Move("Blahblah", 5),
-                new Goto("Blahblah",23),
+                new Birthday("Det er din fødselsdag! Alle giver dig $1. Tillykke med fødselsdagen!", players, 1), // check if this updates the acutal players balance...
+                new Jail("Du løslades uden omkostninger. Behold dette kort indtil du får brug for det."),
+                new Lottery("Du har lavet alle dine lektier. Modtag $2 fra banken.", 2),
+                new Robbery("Du har spist for meget slik. Betal $2 til banken.", 2),
+                new Move("Ryk op til 5 felter frem.", 5),
+                new Goto("Ryk frem til Strandpromenaden.",23),
         };
         deck.setCards(cards);
     }

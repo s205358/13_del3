@@ -3,6 +3,7 @@ package Monopoly;
 import Monopoly.Squares.*;
 
 import java.awt.*;
+import java.util.Arrays;
 
 public class Board {
     private static Board board = new Board();
@@ -68,6 +69,8 @@ public class Board {
 
     @Override
     public String toString() {
-        return squares.length + " squares";
+        return "Board{" +
+                "squares=" + Arrays.toString(squares) +
+                '}';
     }
 }

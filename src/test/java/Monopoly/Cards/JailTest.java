@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class JailTest {
 
     Player player = new Player("John Doe",0,0);
-
     Jail jail = new Jail("Bla");
 
     @Test

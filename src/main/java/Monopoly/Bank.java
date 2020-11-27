@@ -8,6 +8,7 @@ public class Bank {
     }
 
     public void deposit(int cash) {
+        cash = Math.abs(cash);
         this.balance += cash;
     }
 
@@ -40,6 +41,8 @@ public class Bank {
 
     @Override
     public String toString() {
-        return "$" + balance;
+        return "Bank{" +
+                "balance=" + balance +
+                '}';
     }
 }

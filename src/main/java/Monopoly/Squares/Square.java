@@ -20,6 +20,8 @@ public abstract class Square {
 
     @Override
     public String toString() {
-        return name;
+        return "Square{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
