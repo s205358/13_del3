@@ -35,15 +35,26 @@ class PropertyTest {
         assertEquals(playerA, propertyA.getOwner());
         assertEquals(propertyA, playerA.getProperty(0));
         assertEquals(2, playerA.getBank().getBalance());
-        assertEquals(6, playerB.getBank().getBalance());
+        assertEquals(8, playerB.getBank().getBalance());
 
+        playerB.getBank().setBalance(8);
+
+        propertyA.buy(playerB);
+        assertEquals(true, playerB.hasProperties());
+        assertEquals(3, playerB.getBank().getBalance());
+        assertEquals(playerB, propertyA.getOwner());
+        assertEquals(propertyB, playerB.getProperty(0));
 
     }
 
     @Test
     void sell() {
+        propertyA.setOwner(playerA);
 
-
+        //Bug.
+        propertyA.sell();
+        assertEquals(false, playerA.hasProperties());
+        assertEquals(15, playerA.getBank().getBalance());
     }
 
     @Test
