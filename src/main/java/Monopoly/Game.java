@@ -232,7 +232,6 @@ public class Game {
         sc.close();
 
         // Determine Winner
-        // Bug: If you give up, you can win.
         Player winner = null;
         Player tie = null;
         for(Player player: players) {
